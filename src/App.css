@@ -280,7 +280,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
   background-size: 500% auto;
   animation: textShine 4s ease infinite;
 }
@@ -299,7 +299,7 @@
 .aboutContainer{
   height: 100%;
   width: 100%;
-  background-image: url('./assests/doodad\(1\).png');
+  background-image: url('./assests/patterndots.png');
   /* background-size: 200px 100px; */
   position: relative;
   display: flex;
