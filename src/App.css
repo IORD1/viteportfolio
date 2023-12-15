@@ -20,7 +20,13 @@
   height: 100vh;
   overflow-x: hidden;
   color: black;
+  /* cursor: none; */
 }
+
+/* ----------------Cusor CSS */
+
+
+/* ----------------- */
 
 .App svg{
   width: 100%;

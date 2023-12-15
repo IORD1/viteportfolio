@@ -40,11 +40,20 @@ import l18 from './assests/logos/bash.png';
 import l19 from './assests/logos/bootstrap.png';
 
 
+// import CustomCursor from './components/customCursor';
 // Fredericka the Great
 
 function App() {
+
+
+
+
+
   return (
     <div className="App">
+      {/* <CustomCursor/> */}
+      {/* <div class="cursor-dot-outline"></div>
+      <div class="cursor-dot"></div> */}
       <div className='iconholder'>
         <Mobdevlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="mobdevicon"/>
         <Htmlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="htmlicon"/>
