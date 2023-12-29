@@ -1,0 +1,48 @@
+/* SlidingLoader.css */
+.sliding-loader-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .loader {
+    width: 200px;
+    height: 5px;
+    background: lightgrey;
+    overflow: hidden;
+    border-radius: 50px;
+    padding-left: 50px;
+  }
+
+  .loader::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #e64d33;
+    animation: sliding 1.2s ease-in-out infinite;
+  }
+  
+  @keyframes sliding {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+.loader-holder{
+    padding: 0px;
+
+}
+
+.loader-holder>.namelogo{
+    margin: 0px;
+    padding-left: 0px;
+    height: 50px;
+    padding-bottom: 10px;
+}

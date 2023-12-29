@@ -12,7 +12,8 @@
 }
 
 .App{
-  background-color: black;
+  /* background-color: black; */
+  background-color: rgb(24, 23, 23);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
