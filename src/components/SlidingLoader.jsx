@@ -13,7 +13,7 @@ const SlidingLoader = () => {
                 <p className='namehead' style={{color:"white"}}>PRATHMESH INGOLE</p>
             </div>
             <div className="loader"></div>
-
+          <p style={{fontFamily:"Fredericka the Great",fontSize:"0px"}}>.</p>
         </div>
     </div>
   );

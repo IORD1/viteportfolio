@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,lazy, Suspense } from 'react';
 import SlidingLoader from './components/SlidingLoader';
 
 import './App.css'
@@ -49,18 +49,19 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => {
-      // Set loading to false when the entire page is loaded
-      setIsLoading(false);
+    const onPageLoad = () => {
+      console.log('page loaded');
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1600);
     };
 
-    // Attach the handleLoad function to the window's load event
-    window.addEventListener('load', handleLoad);
-
-    // Clean up the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
   }, []);
 
   return (
@@ -192,11 +193,9 @@ function App() {
           </div>
     
         </div>
-
     )}
-
+    
   </div>
-
 
   );
 }

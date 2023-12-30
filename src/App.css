@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+Miao&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap'); */
 
 @keyframes textShine {
   0% {
@@ -9,6 +9,15 @@
   100% {
       background-position: 100% 50%;
   }
+}
+
+
+
+@font-face {
+  font-family: 'Six Caps';
+  src: local('Six Caps'), url('./assests/fonts/Six_Caps/SixCaps-Regular.ttf'), format('ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .App{
