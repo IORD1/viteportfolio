@@ -1,4 +1,18 @@
-/* SlidingLoader.css */
+
+
+@keyframes rightCome {
+  0% { transform: translateX(640%); }
+  100% { transform: translateX(0); }
+}
+
+
+@keyframes leftCome {
+  0% { transform: translateX(-640%); }
+  100% { transform: translateX(0); }
+}
+
+
+
 .sliding-loader-container {
     display: flex;
     flex-flow: column;
@@ -38,6 +52,13 @@
 .loader-holder{
     padding: 0px;
 
+
+}
+
+.loader-holder p{
+  overflow: hidden;
+  animation: rightCome 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }
 
 .loader-holder>.namelogo{
@@ -45,4 +66,9 @@
     padding-left: 0px;
     height: 50px;
     padding-bottom: 10px;
+}
+
+#namelogo{
+  animation: leftCome 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }

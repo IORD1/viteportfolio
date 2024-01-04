@@ -56,11 +56,28 @@ function App() {
       }, 1600);
     };
 
+
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+
+      elements.forEach((element) => {
+        const elementPosition = element.getBoundingClientRect().top;
+
+        if (elementPosition < window.innerHeight) {
+          element.classList.add('animated');
+        }
+      });
+    };
+
     if (document.readyState === 'complete') {
       onPageLoad();
     } else {
       window.addEventListener('load', onPageLoad, false);
-      return () => window.removeEventListener('load', onPageLoad);
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); 
+      return () => {
+        window.removeEventListener('load', onPageLoad);
+      };
     }
   }, []);
 
@@ -72,17 +89,17 @@ function App() {
           <div>
 
           <div className='iconholder'>
-            <Mobdevlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="mobdevicon"/>
-            <Htmlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="htmlicon"/>
-            <Bracketlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="bracketicon"/>
-            <Hooklogo fill='#E64D33' style={{ height: 200, width: 200 }} id="webhookicon"/>
-            <Terminallogo fill='#E64D33' style={{ height: 243, width: 243 }} id="termicon"/>
-            <Jslogo fill='#E64D33' style={{ height: 243, width: 343 }} id="jsicon"/>
-            <Cubes fill='#E64D33' style={{ height:243, width: 243 }} id="cubeicons"/>
+            <Mobdevlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="mobdevicon" className="animate-on-scroll"/>
+            <Htmlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="htmlicon" className="animate-on-scroll"/>
+            <Bracketlogo fill='#E64D33' style={{ height: 150, width: 150 }} id="bracketicon" className="animate-on-scroll"/>
+            <Hooklogo fill='#E64D33' style={{ height: 200, width: 200 }} id="webhookicon" className="animate-on-scroll"/>
+            <Terminallogo fill='#E64D33' style={{ height: 243, width: 243 }} id="termicon" className="animate-on-scroll"/>
+            <Jslogo fill='#E64D33' style={{ height: 243, width: 343 }} id="jsicon" className="animate-on-scroll"/>
+            <Cubes fill='#E64D33' style={{ height:243, width: 243 }} id="cubeicons" className="animate-on-scroll"/>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e64d33" fillOpacity="1" d="M0,64L40,101.3C80,139,160,213,240,234.7C320,256,400,224,480,186.7C560,149,640,107,720,112C800,117,880,171,960,186.7C1040,203,1120,181,1200,144C1280,107,1360,53,1400,26.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+          <svg id='wave' className='animate-on-scroll' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e64d33" fillOpacity="1" d="M0,64L40,101.3C80,139,160,213,240,234.7C320,256,400,224,480,186.7C560,149,640,107,720,112C800,117,880,171,960,186.7C1040,203,1120,181,1200,144C1280,107,1360,53,1400,26.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     
-          <div className='herocontainer'>
+          <div className='herocontainer  animate-on-scroll'>
             <nav>
               <div className='namelogo'>
                 <Namelogo fill='#E64D33' style={{ height: 50, width: 50 }} id="namelogo"/>

@@ -11,7 +11,22 @@
   }
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+
+@keyframes baseline {
+  0% { transform: translateY(140%); }
+  100% { transform: translateY(0); }
+}
 
 @font-face {
   font-family: 'Six Caps';
@@ -19,6 +34,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 
 .App{
   /* background-color: black; */
@@ -31,6 +47,7 @@
   overflow-x: hidden;
   color: black;
   /* cursor: none; */
+  
 }
 
 /* ----------------Cusor CSS */
@@ -76,12 +93,16 @@
   position: absolute;
   left: -30px;
   top: 35%;
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }
 
 #bracketicon{
   rotate: -30deg;
   position: absolute;
   top: -20px;
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }
 
 #htmlicon{
@@ -89,6 +110,8 @@
   position: absolute;
   top: -50px;
   left : 30%;
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }
 
 #mobdevicon{
@@ -96,6 +119,16 @@
   position: absolute;
   top: -50px;
   left : 60%;
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
+}
+
+
+#wave{
+  position: absolute;
+  bottom: 0px;
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
+
 }
 
 .herocontainer{
@@ -107,6 +140,7 @@
   left: 10vw;
   position: absolute;
   /* background:linear-gradient(#F3F1EF,#F3F1EF),url('https://grainy-gradients.vercel.app/noise.svg'); */
+  animation: fadeInUp 0.5s forwards cubic-bezier(.4,0,.39,1.04);
 
 
 }
@@ -125,6 +159,14 @@
   width: 100%;
   height: 100px;
   display: flex ;
+  background-color:rgb(243,241,239,.7);
+  position: absolute;
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: all .5s ease;
+  /* transition: background-color .5s ease; */
+  transition-property: background-color,backdrop-filter,-webkit-backdrop-filter;
+  z-index: 3;
+
 }
 
 
@@ -159,6 +201,7 @@
   text-decoration: none;
   color: black;
   font-family: 'Noto Sans Miao', sans-serif;
+  /* font-family:"SF-Pro"; */
   font-size: 13px;
 }
 
@@ -206,7 +249,9 @@
 
 .restcontainer{
   width: 100%;
-  height: calc(95vh - 100px);
+  height: 100%;
+  /* padding-top: calc(95vh - 100px); */
+  /* height: calc(95vh - 100px); */
   position: relative;  
   overflow-x: hidden;
   overflow-y: scroll;
@@ -251,6 +296,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 100px;
+  overflow: hidden;
+
 }
 
 .herotext1{
@@ -261,6 +308,8 @@
   display:inline-block;
   text-transform: uppercase;
   z-index: 1;
+  display: inline-block;
+  animation: baseline 0.5s forwards cubic-bezier(.4,0,.39,1.04);
 } 
 
 
@@ -347,6 +396,8 @@ filter:  brightness(100%);
   /* backdrop-filter: blur(4px); */
   overflow-x: scroll;
   overflow-y: visible;
+  animation: fadeInUp 1s ease-out;
+
 }
 
 .projectStrip::-webkit-scrollbar {
@@ -456,6 +507,8 @@ filter:  brightness(100%);
   width: 70%;
   height: 100%;
   /* border :2px dotted grey; */
+  animation: fadeInUp 1s ease-out;
+
 
 }
 
@@ -551,6 +604,7 @@ filter:  brightness(100%);
   width: 100%;
   background-color: maroon;
   position: relative;
+  animation: fadeInUp 1s ease-out;
 
 }
 
